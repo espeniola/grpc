@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package proto3;
+package average;
 
 option go_package = "./averagepb";
 

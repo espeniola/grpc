@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package maximum;
+
+option go_package = "./maximumpb";
+
+message Maximum{
+  int32 number = 1;
+}
+
+message MaximumRequest{
+  Maximum maximum = 1;
+}
+
+message MaximumResponse{
+  int32 max = 1;
+}
+
+service MaximumService{
+  //Bidi Streaming
+  rpc FindMaximum(stream MaximumRequest) returns (stream MaximumResponse);
+}
