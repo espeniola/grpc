@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package decompositon;
+
+option go_package = "./decompositionpb";
+
+message Decomposition{
+  int32 number = 1;
+}
+
+message DecompositionRequest{
+  Decomposition decomposition = 1;
+}
+
+message DecompositionResponse{
+  int32 result = 1;
+}
+
+service DecompositionService{
+  //server streaming
+  rpc Decomposition(DecompositionRequest) returns (stream DecompositionResponse);
+}
+
