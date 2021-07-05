@@ -6,7 +6,6 @@ import (
 	"google.golang.org/grpc"
 	"log"
 	"net"
-	"time"
 )
 
 type server struct{}
@@ -24,7 +23,7 @@ func (*server) Decomposition(req *decompositionpb.DecompositionRequest,
 			}
 			stream.Send(res)
 			number = number / x
-			time.Sleep(1000 * time.Millisecond)
+			//time.Sleep(5000 * time.Millisecond)
 		}else {
 			x++
 		}
